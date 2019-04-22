@@ -1,18 +1,18 @@
 cd $HOME
 
-rm -rf repos/bdlc-fetch/data/historicalstockprice/csv/
-rm -rf repos/bdlc-fetch/data/historicalstockprice/json/
-rm -rf repos/bdlc-fetch/data/companyprofile/csv/
-rm -rf repos/bdlc-fetch/data/companyprofile/json/
+rm -rf data/historicalstockprice/csv/
+rm -rf data/historicalstockprice/json/
+rm -rf data/companyprofile/csv/
+rm -rf data/companyprofile/json/
 
 
-mkdir -p repos/bdlc-fetch/data/historicalstockprice/csv/
-mkdir -p repos/bdlc-fetch/data/historicalstockprice/json/
-mkdir -p repos/bdlc-fetch/data/companyprofile/csv/
-mkdir -p repos/bdlc-fetch/data/companyprofile/json/
+mkdir -p data/historicalstockprice/csv/
+mkdir -p data/historicalstockprice/json/
+mkdir -p data/companyprofile/csv/
+mkdir -p data/companyprofile/json/
 
 
-cd repos/bdlc-fetch/data/historicalstockprice/json/
+cd data/historicalstockprice/json/
 
 wget https://api.unibit.ai/historicalstockprice/AAPL?range=20y&interval=1&datatype=json&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0
 wget https://api.unibit.ai/historicalstockprice/AMZN?range=20y&interval=1&datatype=json&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0
@@ -36,7 +36,7 @@ wget https://api.unibit.ai/historicalstockprice/TWTR?range=20y&interval=1&dataty
 wget https://api.unibit.ai/historicalstockprice/VMW?range=20y&interval=1&datatype=json&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0
 
 
-cd repos/bdlc-fetch/data/historicalstockprice/csv/
+cd data/historicalstockprice/csv/
 
 wget https://api.unibit.ai/historicalstockprice/AAPL?range=20y&interval=1&datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0
 wget https://api.unibit.ai/historicalstockprice/AMZN?range=20y&interval=1&datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0
@@ -60,7 +60,7 @@ wget https://api.unibit.ai/historicalstockprice/TWTR?range=20y&interval=1&dataty
 wget https://api.unibit.ai/historicalstockprice/VMW?range=20y&interval=1&datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0
 
 
-cd repos/bdlc-fetch/data/companyprofile/json/
+cd data/companyprofile/json/
 
 wget https://api.unibit.ai/companyprofile/AAPL?datatype=json&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0
 wget https://api.unibit.ai/companyprofile/AMZN?datatype=json&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0
@@ -84,7 +84,7 @@ wget https://api.unibit.ai/companyprofile/TWTR?datatype=json&AccessKey=FeVyD9yxV
 wget https://api.unibit.ai/companyprofile/VMW?datatype=json&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0
 
 
-cd repos/bdlc-fetch/data/companyprofile/csv/
+cd data/companyprofile/csv/
 
 wget https://api.unibit.ai/companyprofile/AAPL?datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0
 wget https://api.unibit.ai/companyprofile/AMZN?datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0
