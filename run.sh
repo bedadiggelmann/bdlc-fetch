@@ -1,0 +1,3 @@
+cd $HOME
+
+./getFilesFromAPI.sh
