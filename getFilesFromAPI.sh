@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # 2019-04, Beda Diggelmann, https://github.com/bedadiggelmann
 
-cd $(dirname $0)
+cd$(dirname $0)
 
 #################################################################################################################################################
 # remove directories if they already exist
@@ -17,7 +17,6 @@ mkdir -p data/historicalstockprice/json/
 mkdir -p data/companyprofile/csv/
 mkdir -p data/companyprofile/json/
 
-
 #################################################################################################################################################
 # store the data from the API in the created directories
 
@@ -29,6 +28,7 @@ wget 'https://api.unibit.ai/historicalstockprice/AAPL?range=1m&interval=1&dataty
 # wget 'https://api.unibit.ai/historicalstockprice/AAPL?range=1y&interval=1&datatype=json&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0'
 # wget 'https://api.unibit.ai/historicalstockprice/AMZN?range=1y&interval=1&datatype=json&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0'
 
+cd
 
 cd data/historicalstockprice/csv/
 
@@ -37,7 +37,7 @@ wget 'https://api.unibit.ai/historicalstockprice/AAPL?range=3y&interval=100&data
 # wget 'https://api.unibit.ai/historicalstockprice/AAPL?range=1y&interval=1&datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0'
 # wget 'https://api.unibit.ai/historicalstockprice/AMZN?range=1y&interval=1&datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0'
 
-
+cd
 
 cd data/companyprofile/json/
 
@@ -46,7 +46,7 @@ wget 'https://api.unibit.ai/companyprofile/AAPL?AccessKey=demo'
 # wget 'https://api.unibit.ai/companyprofile/AAPL?datatype=json&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0'
 # wget 'https://api.unibit.ai/companyprofile/AMZN?datatype=json&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0'
 
-
+cd
 
 cd data/companyprofile/csv/
 
@@ -55,5 +55,6 @@ wget 'https://api.unibit.ai/companyprofile/AAPL?datatype=csv&AccessKey=demo'
 # wget 'https://api.unibit.ai/companyprofile/AAPL?datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0'
 # wget 'https://api.unibit.ai/companyprofile/AMZN?datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0'
 
-cd ..
+cd
+cd data/
 ll
