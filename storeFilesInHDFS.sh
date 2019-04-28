@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # 2019-04, Beda Diggelmann, https://github.com/bedadiggelmann
+cd $(dirname $0)
 #############################################################################################################################
 # make the directories in the HDFS
 hdfs dfs -mkdir /user/${USER}/examples/unibit.ai
