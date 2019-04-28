@@ -3,6 +3,15 @@
 
 cd $(dirname $0)
 
+hdfs dfs -mkdir /user/${USER}/examples/unibit.ai
+hdfs dfs -mkdir /user/${USER}/examples/unibit.ai/companyprofile
+hdfs dfs -mkdir /user/${USER}/examples/unibit.ai/companyprofile/csv
+hdfs dfs -mkdir /user/${USER}/examples/unibit.ai/companyprofile/json
+hdfs dfs -mkdir /user/${USER}/examples/unibit.ai/historicalstockprice
+hdfs dfs -mkdir /user/${USER}/examples/unibit.ai/historicalstockprice/csv
+hdfs dfs -mkdir /user/${USER}/examples/unibit.ai/historicalstockprice/json
+
+
 for gz in companyprofile/data/csv/unibit-ai-companyprofiles*.gz; do
 		fname=$(basename ${gz} .gz)
 		gunzip --stdout ${gz} | hdfs dfs -put -  /user/${USER}/examples/unibit.ai/companyprofile/csv/${fname}

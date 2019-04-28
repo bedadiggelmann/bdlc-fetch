@@ -22,18 +22,20 @@ mkdir -p data/companyprofile/json/
 # store the data from the API in the created directories
 
 cd data/historicalstockprice/json/
-wget 'https://api.unibit.ai/historicalstockprice/AAPL?range=1m&interval=3&AccessKey=demo'
+wget 'https://api.unibit.ai/historicalstockprice/AAPL?range=1m&interval=1&datatype=json&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0'
 
-# wget 'https://api.unibit.ai/historicalstockprice/AAPL?range=12m&interval=1&datatype=json&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0'
-# wget 'https://api.unibit.ai/historicalstockprice/AMZN?range=12m&interval=1&datatype=json&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0'
+# wget 'https://api.unibit.ai/historicalstockprice/AAPL?range=1m&interval=3&AccessKey=demo'
+
+# wget 'https://api.unibit.ai/historicalstockprice/AAPL?range=1y&interval=1&datatype=json&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0'
+# wget 'https://api.unibit.ai/historicalstockprice/AMZN?range=1y&interval=1&datatype=json&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0'
 
 
 cd data/historicalstockprice/csv/
 
 wget 'https://api.unibit.ai/historicalstockprice/AAPL?range=3y&interval=100&datatype=csv&AccessKey=demo'
 
-# wget 'https://api.unibit.ai/historicalstockprice/AAPL?range=12m&interval=1&datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0'
-# wget 'https://api.unibit.ai/historicalstockprice/AMZN?range=12m&interval=1&datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0'
+# wget 'https://api.unibit.ai/historicalstockprice/AAPL?range=1y&interval=1&datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0'
+# wget 'https://api.unibit.ai/historicalstockprice/AMZN?range=1y&interval=1&datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0'
 
 
 

@@ -8,20 +8,12 @@ cd $(dirname $0)
 soruce ./getFilesFromAPI.sh
 
 ###################################################
-# unzip files in local filesystem
-# soruce ./unzipFiles.sh
-
-###################################################
-# create directories in HDFS
-soruce ./createDirectoriesInHDFS.sh
+# format files for usage with Hive or Spark
+source ./formatFiles.sh
 
 ###################################################
 # store files in HDFS
 soruce ./storeFilesInHDFS.sh
-
-###################################################
-# put the files in HDFS
-# soruce ./putFilesInHDFS.sh
 
 ###################################################
 # remove files from HDFS
