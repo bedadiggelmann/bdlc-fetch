@@ -20,7 +20,7 @@ mkdir -p repos/bdlc-fetch/data/companyprofile/json/
 cd
 cd repos/bdlc-fetch/data/historicalstockprice/json/
 
-
+pwd
 wget "https://api.unibit.ai/historicalstockprice/AAPL?range=1m&interval=3&AccessKey=demo"
 
 
@@ -31,7 +31,7 @@ wget "https://api.unibit.ai/historicalstockprice/AAPL?range=1m&interval=3&Access
 
 cd
 cd repos/bdlc-fetch/data/historicalstockprice/csv/
-
+pwd
 wget "https://api.unibit.ai/historicalstockprice/AAPL?range=3y&interval=100&datatype=csv&AccessKey=demo"
 
 # wget "https://api.unibit.ai/historicalstockprice/AAPL?range=1y&interval=1&datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0"
@@ -39,7 +39,7 @@ wget "https://api.unibit.ai/historicalstockprice/AAPL?range=3y&interval=100&data
 
 cd
 cd repos/bdlc-fetch/data/companyprofile/json/
-
+pwd
 wget "https://api.unibit.ai/companyprofile/AAPL?AccessKey=demo"
 
 # wget "https://api.unibit.ai/companyprofile/AAPL?datatype=json&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0"
@@ -47,7 +47,7 @@ wget "https://api.unibit.ai/companyprofile/AAPL?AccessKey=demo"
 
 cd
 cd repos/bdlc-fetch/data/companyprofile/csv/
-
+pwd
 wget "https://api.unibit.ai/companyprofile/AAPL?datatype=csv&AccessKey=demo"
 
 # wget "https://api.unibit.ai/companyprofile/AAPL?datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0"
