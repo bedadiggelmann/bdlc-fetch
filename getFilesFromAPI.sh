@@ -17,37 +17,37 @@ mkdir -p repos/bdlc-fetch/data/companyprofile/json/
 
 #################################################################################################################################################
 # store the data from the API in the created directories
-cd
-cd repos/bdlc-fetch/data/historicalstockprice/json/
 
-pwd
+cd data/historicalstockprice/json/
+
 wget "https://api.unibit.ai/historicalstockprice/AAPL?range=1m&interval=3&AccessKey=demo"
-
 
 #TEST: wget "https://api.unibit.ai/historicalstockprice/AAPL?range=1m&interval=1&datatype=json&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0"
 
 # wget "https://api.unibit.ai/historicalstockprice/AAPL?range=1y&interval=1&datatype=json&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0"
 # wget "https://api.unibit.ai/historicalstockprice/AMZN?range=1y&interval=1&datatype=json&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0"
 
-cd
-cd repos/bdlc-fetch/data/historicalstockprice/csv/
-pwd
+
+
+cd data/historicalstockprice/csv/
+
 wget "https://api.unibit.ai/historicalstockprice/AAPL?range=3y&interval=100&datatype=csv&AccessKey=demo"
 
 # wget "https://api.unibit.ai/historicalstockprice/AAPL?range=1y&interval=1&datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0"
 # wget "https://api.unibit.ai/historicalstockprice/AMZN?range=1y&interval=1&datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0"
 
-cd
-cd repos/bdlc-fetch/data/companyprofile/json/
-pwd
+
+
+cd data/companyprofile/json/
+
 wget "https://api.unibit.ai/companyprofile/AAPL?AccessKey=demo"
 
 # wget "https://api.unibit.ai/companyprofile/AAPL?datatype=json&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0"
 # wget "https://api.unibit.ai/companyprofile/AMZN?datatype=json&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0"
 
-cd
-cd repos/bdlc-fetch/data/companyprofile/csv/
-pwd
+
+
+cd data/companyprofile/csv/
 wget "https://api.unibit.ai/companyprofile/AAPL?datatype=csv&AccessKey=demo"
 
 # wget "https://api.unibit.ai/companyprofile/AAPL?datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0"
