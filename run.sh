@@ -6,10 +6,6 @@
 soruce ./getFilesFromAPI.sh
 
 ###################################################
-# format files for usage with Hive or Spark
-source ./formatFiles.sh
-
-###################################################
 # store files in HDFS
 soruce ./storeFilesInHDFS.sh
 
