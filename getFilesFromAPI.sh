@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # 2019-04, Beda Diggelmann, https://github.com/bedadiggelmann
-cd $(dirname $0)
+cd$(dirname $0)
 #################################################################################################################################################
 # remove directories if they already exist
 rm -rf repos/bdlc-fetch/data/historicalstockprice/
