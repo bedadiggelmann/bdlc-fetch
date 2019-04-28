@@ -1,0 +1,20 @@
+{
+  "Meta Data" : {
+    "datapoints" : 1,
+    "ticker" : "AAPL",
+    "credit cost" : 100,
+    "Time Zone" : "US/Eastern",
+    "last refreshed" : "Sun Apr 28 15:44:56 GMT 2019"
+  },
+  "company profile" : {
+    "ticker" : "AAPL",
+    "company_name" : "Apple Inc.",
+    "exchange" : "Nasdaq Global Select",
+    "industry" : "Computer Hardware",
+    "website" : "http://www.apple.com",
+    "company_decription" : "Apple Inc is designs, manufactures and markets mobile communication and media devices and personal computers, and sells a variety of related software, services, accessories, networking solutions and third-party digital content and applications.",
+    "company_leadership" : "Timothy D. Cook",
+    "sector" : "Technology",
+    "asset_type" : "cs"
+  }
+}
