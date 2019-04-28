@@ -12,11 +12,10 @@ mkdir -p data/companyprofile/csv/
 mkdir -p data/companyprofile/json/
 #################################################################################################################################################
 # store the data from the API in the created directories
-curl "https://api.unibit.ai/historicalstockprice/AAPL?range=1m&interval=3&AccessKey=demo" > data/historicalstockprice/json/AAPL_stock.json
-
-cat | jq '."Stock price"[]' > data/historicalstockprice/json/AAPL_stock_new.json
+curl "https://api.unibit.ai/historicalstockprice/AAPL?range=1m&interval=3&AccessKey=demo" | jq '."Stock price"[]' > data/historicalstockprice/json/AAPL_stock.json
 
 curl "https://api.unibit.ai/historicalstockprice/AAPL?range=1m&interval=3&AccessKey=demo" > data/historicalstockprice/json/AMZN_stock.json
+
 # curl "https://api.unibit.ai/historicalstockprice/AAPL?range=1y&interval=1&datatype=json&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" > data/historicalstockprice/json/AAPL_stock.json
 # curl "https://api.unibit.ai/historicalstockprice/AMZN?range=1y&interval=1&datatype=json&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" > data/historicalstockprice/json/AMZN_stock.json
 
