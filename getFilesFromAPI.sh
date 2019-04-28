@@ -33,8 +33,8 @@ curl "https://api.unibit.ai/companyprofile/AAPL?AccessKey=demo" | jq -c '. | {ti
 # curl "https://api.unibit.ai/companyprofile/AMZN?datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0"
 #################################################################################################################################################
 # zip files
-gunzip  data/historicalstockprice/json/historicalstockprices.1y.jq.json
-gunzip  data/companyprofile/json/companyprofiles.jq.json
+# gunzip  data/historicalstockprice/json/historicalstockprices.1y.jq.json
+# gunzip  data/companyprofile/json/companyprofiles.jq.json
 #
 #
 #
