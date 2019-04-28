@@ -26,9 +26,7 @@ curl "https://api.unibit.ai/historicalstockprice/AAPL?range=3y&interval=100&data
 # curl "https://api.unibit.ai/historicalstockprice/AAPL?range=1y&interval=1&datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" > data/historicalstockprice/csv/AAPL_stock.csv
 # curl "https://api.unibit.ai/historicalstockprice/AMZN?range=1y&interval=1&datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" > data/historicalstockprice/csv/AMZN_stock.csv
 
-curl "https://api.unibit.ai/companyprofile/AAPL?AccessKey=demo" > data/companyprofile/json/AAPL_profile.json
-
-cat data/companyprofile/json/AAPL_profile.json | jq '. |
+curl "https://api.unibit.ai/companyprofile/AAPL?AccessKey=demo" | jq '. |
 {
   ticker: ."company profile".ticker,
   company_name: ."company profile".company_name,
