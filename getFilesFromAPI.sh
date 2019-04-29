@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 # 2019-04, Beda Diggelmann, https://github.com/bedadiggelmann
 #################################################################################################################################################
 # remove directory if they already exist
