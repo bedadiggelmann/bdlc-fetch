@@ -13,7 +13,7 @@ mkdir -p unibitdata/companyprofile/csv/
 mkdir -p unibitdata/companyprofile/json/
 
 
-#****** JSON Files ******#
+#****** JSON data ******#
 
 #############################################################
 # JSON: get the stockprices from API - transform stocckprices with jq
@@ -26,8 +26,7 @@ curl "https://api.unibit.ai/companyprofile/AAPL?datatype=json&AccessKey=FeVyD9yx
 curl "https://api.unibit.ai/companyprofile/AMZN?datatype=json&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" | jq -c '. | {ticker: ."company profile".ticker, company_name: ."company profile".company_name, exchange: ."company profile".exchange, industry: ."company profile".industry, company_decription: ."company profile".company_decription, company_leadership: ."company profile".company_leadership, sector: ."company profile".sector, asset_type: ."company profile".asset_type}' >> unibitdata/companyprofile/json/companyprofiles.json
 
 
-
-#****** CSV Files ******#
+#****** CSV data ******#
 
 #############################################################
 # CSV: get the stockprices from API
@@ -41,7 +40,6 @@ sed -n '2,$p' unibitdata/historicalstockprice/csv/AAPL_stock.csv | sed 's/^/AAPL
 sed -n '2,$p' unibitdata/historicalstockprice/csv/AMZN_stock.csv | sed 's/^/AMZN,/' >> unibitdata/historicalstockprice/csv/historicalstockprices_1y.csv
 rm unibitdata/historicalstockprice/csv/AAPL_stock.csv
 rm unibitdata/historicalstockprice/csv/AMZN_stock.csv
-
 
 #############################################################
 # CSV: get the companyprofiles from API
