@@ -28,8 +28,8 @@ curl curl "https://api.unibit.ai/companyprofile/AMZN?datatype=json&AccessKey=FeV
 
 #######################################################################
 # CSV: store the stockprices from the API in the created directories
-curl "https://api.unibit.ai/historicalstockprice/AAPL?range=1y&interval=1&datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" > unibitdata/historicalstockprice/csv/AAPL_raw.csv
-curl "https://api.unibit.ai/historicalstockprice/AMZN?range=1y&interval=1&datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" > unibitdata/historicalstockprice/csv/AMZN_raw.csv
+curl "https://api.unibit.ai/historicalstockprice/AAPL?range=1m&interval=1&datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" > unibitdata/historicalstockprice/csv/AAPL_raw.csv
+curl "https://api.unibit.ai/historicalstockprice/AMZN?range=1m&interval=1&datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" > unibitdata/historicalstockprice/csv/AMZN_raw.csv
 
 #######################################################################
 # CSV: store the companyprofiles from the API in the created directories
@@ -53,9 +53,9 @@ sed -n '1,1p' unibitdata/historicalstockprice/csv/AAPL_raw.csv > unibitdata/hist
 sed -n '2,$p' unibitdata/historicalstockprice/csv/AAPL_raw.csv > unibitdata/historicalstockprice/csv/AAPL_temp.csv
 sed -n '2,$p' unibitdata/historicalstockprice/csv/AMZN_raw.csv > unibitdata/historicalstockprice/csv/AMZN_temp.csv
 
-sed 's/^/ticker,/' unibitdata/historicalstockprice/csv/historicalstockprices_1y_header_temp.csv > unibitdata/historicalstockprice/json/historicalstockprices_1y_header.csv
-sed 's/^/AAPL,/' unibitdata/historicalstockprice/csv/AAPL_temp.csv | cat >> unibitdata/companyprofile/csv/historicalstockprices_1y.csv
-sed 's/^/AMZN,/' unibitdata/historicalstockprice/csv/AMZN_temp.csv | cat >> unibitdata/companyprofile/csv/historicalstockprices_1y.csv
+sed 's/^/ticker,/' unibitdata/historicalstockprice/csv/historicalstockprices_1y_header_temp.csv > unibitdata/historicalstockprice/csv/historicalstockprices_1y_header.csv
+sed 's/^/AAPL,/' unibitdata/historicalstockprice/csv/AAPL_temp.csv | cat >> unibitdata/historicalstockprice/csv/historicalstockprices_1y.csv
+sed 's/^/AMZN,/' unibitdata/historicalstockprice/csv/AMZN_temp.csv | cat >> unibitdata/historicalstockprice/csv/historicalstockprices_1y.csv
 
 rm unibitdata/historicalstockprice/csv/AMZN_raw.csv
 rm unibitdata/historicalstockprice/csv/AAPL_raw.csv
