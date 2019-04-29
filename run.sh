@@ -3,12 +3,12 @@
 
 #############################################################
 # remove exiting files in HDFS
-source ./removeFilesFromHDFS.sh
+sh ./removeFilesFromHDFS.sh
 
 #############################################################
 # fetch files from api to local filesystem
-soruce ./getFilesFromAPI.sh
+sh ./getFilesFromAPI.sh
 
 #############################################################
 # store files in HDFS
-soruce ./storeFilesInHDFS.sh
+sh ./storeFilesInHDFS.sh
