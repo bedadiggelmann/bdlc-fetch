@@ -30,27 +30,27 @@ curl "https://api.unibit.ai/companyprofile/AMZN?datatype=json&AccessKey=FeVyD9yx
 
 #############################################################
 # CSV: store the stockprices from the API in the created directories
-curl "https://api.unibit.ai/historicalstockprice/AAPL?range=1m&interval=1&datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" > unibitdata/historicalstockprice/csv/AAPL_raw.csv
-curl "https://api.unibit.ai/historicalstockprice/AMZN?range=1m&interval=1&datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" > unibitdata/historicalstockprice/csv/AMZN_raw.csv
-
-#############################################################
-# CSV: store the companyprofiles from the API in the created directories
-curl "https://api.unibit.ai/companyprofile/AAPL?datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" > unibitdata/companyprofile/csv/AAPL_raw.csv
-curl "https://api.unibit.ai/companyprofile/AMZN?datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0"> unibitdata/companyprofile/csv/AMZN_raw.csv
-
-#############################################################
-# CSV: transform companyprofiles
-sed -n '1,1p' unibitdata/companyprofile/csv/AAPL_raw.csv > unibitdata/companyprofile/csv/companyprofiles_header.csv
-sed -n '2,$p' unibitdata/companyprofile/csv/AAPL_raw.csv > unibitdata/companyprofile/csv/companyprofiles.csv
-sed -n '2,$p' unibitdata/companyprofile/csv/AMZN_raw.csv >> unibitdata/companyprofile/csv/companyprofiles.csv
-rm unibitdata/companyprofile/csv/AAPL_raw.csv
-rm unibitdata/companyprofile/csv/AMZN_raw.csv
+curl "https://api.unibit.ai/historicalstockprice/AAPL?range=1m&interval=1&datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" > unibitdata/historicalstockprice/csv/AAPL_stock.csv
+curl "https://api.unibit.ai/historicalstockprice/AMZN?range=1m&interval=1&datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" > unibitdata/historicalstockprice/csv/AMZN_stock.csv
 
 #############################################################
 # CSV: transform stockprices
-sed -n '1,1p' unibitdata/historicalstockprice/csv/AAPL_raw.csv | sed 's/^/ticker,/' > unibitdata/historicalstockprice/csv/historicalstockprices_1y_header.csv
-sed -n '2,$p' unibitdata/historicalstockprice/csv/AAPL_raw.csv | sed 's/^/AAPL,/' > unibitdata/historicalstockprice/csv/historicalstockprices_1y.csv 
-sed -n '2,$p' unibitdata/historicalstockprice/csv/AMZN_raw.csv | sed 's/^/AMZN,/' >> unibitdata/historicalstockprice/csv/historicalstockprices_1y.csv
-rm unibitdata/historicalstockprice/csv/AAPL_raw.csv
-rm unibitdata/historicalstockprice/csv/AMZN_raw.csv
+sed -n '1,1p' unibitdata/historicalstockprice/csv/AAPL_stock.csv | sed 's/^/ticker,/' > unibitdata/historicalstockprice/csv/historicalstockprices_1y_header.csv
+sed -n '2,$p' unibitdata/historicalstockprice/csv/AAPL_stock.csv | sed 's/^/AAPL,/' > unibitdata/historicalstockprice/csv/historicalstockprices_1y.csv 
+sed -n '2,$p' unibitdata/historicalstockprice/csv/AMZN_stock.csv | sed 's/^/AMZN,/' >> unibitdata/historicalstockprice/csv/historicalstockprices_1y.csv
+rm unibitdata/historicalstockprice/csv/AAPL_stock.csv
+rm unibitdata/historicalstockprice/csv/AMZN_stock.csv
+
+#############################################################
+# CSV: store the companyprofiles from the API in the created directories
+curl "https://api.unibit.ai/companyprofile/AAPL?datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" > unibitdata/companyprofile/csv/AAPL_stock.csv
+curl "https://api.unibit.ai/companyprofile/AMZN?datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0"> unibitdata/companyprofile/csv/AMZN_stock.csv
+
+#############################################################
+# CSV: transform companyprofiles
+sed -n '1,1p' unibitdata/companyprofile/csv/AAPL_stock.csv > unibitdata/companyprofile/csv/companyprofiles_header.csv
+sed -n '2,$p' unibitdata/companyprofile/csv/AAPL_stock.csv > unibitdata/companyprofile/csv/companyprofiles.csv
+sed -n '2,$p' unibitdata/companyprofile/csv/AMZN_stock.csv >> unibitdata/companyprofile/csv/companyprofiles.csv
+rm unibitdata/companyprofile/csv/AAPL_stock.csv
+rm unibitdata/companyprofile/csv/AMZN_stock.csv
 #curl "https://api.unibit.ai/historicalstockprice/AAPL?range=1m&interval=3&AccessKey=demo" | jq -c '. | {ticker: ."Meta Data".ticker, date: ."Stock price"[].date, open: ."Stock price"[].open, high: ."Stock price"[].high, low: ."Stock price"[].low, close: ."Stock price"[].close, adj_close: ."Stock price"[].adj_close, volume: ."Stock price"[].volume}' > data/historicalstockprice/json/AAPL_stock.json
