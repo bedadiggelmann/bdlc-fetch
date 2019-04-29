@@ -48,9 +48,9 @@ rm unibitdata/companyprofile/csv/AMZN_raw.csv
 
 #############################################################
 # CSV: transform stockprices
-sed -n '1,1p;s/^/ticker,/' unibitdata/historicalstockprice/csv/AAPL_raw.csv > unibitdata/historicalstockprice/csv/historicalstockprices_1y_header.csv
-sed -n '2,$p;s/^/AAPL,/' unibitdata/historicalstockprice/csv/AAPL_raw.csv > unibitdata/historicalstockprice/csv/historicalstockprices_1y.csv 
-sed -n '2,$p;s/^/AMZN,/' unibitdata/historicalstockprice/csv/AMZN_raw.csv >> unibitdata/historicalstockprice/csv/historicalstockprices_1y.csv
+sed '1,1p; s/^/ticker,/' unibitdata/historicalstockprice/csv/AAPL_raw.csv > unibitdata/historicalstockprice/csv/historicalstockprices_1y_header.csv
+sed '2,$p; s/^/AAPL,/' unibitdata/historicalstockprice/csv/AAPL_raw.csv > unibitdata/historicalstockprice/csv/historicalstockprices_1y.csv 
+sed '2,$p; s/^/AMZN,/' unibitdata/historicalstockprice/csv/AMZN_raw.csv >> unibitdata/historicalstockprice/csv/historicalstockprices_1y.csv
 rm unibitdata/historicalstockprice/csv/AAPL_raw.csv
 rm unibitdata/historicalstockprice/csv/AMZN_raw.csv
 #curl "https://api.unibit.ai/historicalstockprice/AAPL?range=1m&interval=3&AccessKey=demo" | jq -c '. | {ticker: ."Meta Data".ticker, date: ."Stock price"[].date, open: ."Stock price"[].open, high: ."Stock price"[].high, low: ."Stock price"[].low, close: ."Stock price"[].close, adj_close: ."Stock price"[].adj_close, volume: ."Stock price"[].volume}' > data/historicalstockprice/json/AAPL_stock.json
