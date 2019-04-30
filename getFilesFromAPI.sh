@@ -81,30 +81,30 @@ curl "https://api.unibit.ai/companyprofile/AMZN?datatype=json&AccessKey=FeVyD9yx
 ## CSV: get stockprices from API - transform with sed
 curl "https://api.unibit.ai/historicalstockprice/AAPL?range=1m&interval=1&datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" |
 	sed -n '1,1p' |
-	sed 's/^/ticker,/'
-	> unibitdata/historicalstockprice/csv/historicalstockprices_1y_header.csv
+	sed 's/^/ticker,/
+'	> unibitdata/historicalstockprice/csv/historicalstockprices_1y_header.csv
 	
 curl "https://api.unibit.ai/historicalstockprice/AAPL?range=1m&interval=1&datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" |
 	sed -n '2,$p' |
-	sed 's/^/AAPL,/'
-	> unibitdata/historicalstockprice/csv/historicalstockprices_1y.csv 
+	sed 's/^/AAPL,/
+'	> unibitdata/historicalstockprice/csv/historicalstockprices_1y.csv 
 	
 curl "https://api.unibit.ai/historicalstockprice/AMZN?range=1m&interval=1&datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" |
 	sed -n '2,$p' |
-	sed 's/^/AMZN,/'
-	>> unibitdata/historicalstockprice/csv/historicalstockprices_1y.csv
+	sed 's/^/AMZN,/
+'	>> unibitdata/historicalstockprice/csv/historicalstockprices_1y.csv
 
 
 ## ###########################################################
 ## CSV: get companyprofiles from API - transform with sed
 curl "https://api.unibit.ai/companyprofile/AAPL?datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" |
-	sed -n '1,1p'
-	> unibitdata/companyprofile/csv/companyprofiles_header.csv
+	sed -n '1,1p
+' 	> unibitdata/companyprofile/csv/companyprofiles_header.csv
 	
 curl "https://api.unibit.ai/companyprofile/AAPL?datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" |
-	sed -n '2,$p'
-	> unibitdata/companyprofile/csv/companyprofiles.csv
+	sed -n '2,$p
+'	> unibitdata/companyprofile/csv/companyprofiles.csv
 	
 curl "https://api.unibit.ai/companyprofile/AMZN?datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" |
-	sed -n '2,$p'
-	>> unibitdata/companyprofile/csv/companyprofiles.csv
+	sed -n '2,$p
+'	>> unibitdata/companyprofile/csv/companyprofiles.csv
