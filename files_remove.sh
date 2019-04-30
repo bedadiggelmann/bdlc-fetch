@@ -6,10 +6,6 @@
 rm -rf unibitdata/
 
 #############################################################
-# show content of repos/bdlc-fetch/
-ls -l repos/bdlc-fetch/
-
-#############################################################
 # remove hdfs unibitdata directory if it already exists
 hdfs dfs -rm -r /user/bd01/examples/unibitdata
 
