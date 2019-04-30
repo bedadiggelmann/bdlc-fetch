@@ -3,12 +3,12 @@
 
 ## ###########################################################
 ## remove existing files in HDFS
-sh ./removeFilesFromHDFS.sh
+sh ./files_remove.sh
 
 ## ###########################################################
 ## fetch files from api to local filesystem and parse them
-sh ./getFilesFromAPI.sh
+sh ./files_fetch-convert.sh
 
 ## ###########################################################
 ## store files in HDFS
-sh ./storeFilesInHDFS.sh
+sh ./files_push2hdfs.sh
