@@ -15,7 +15,7 @@ mkdir -p unibitdata/companyprofile/json/
 
 ## ###########################################################
 ## JSON: get stockprices from API - transform with jq
-curl "https://api.unibit.ai/historicalstockprice/AAPL?range=1y&interval=1&datatype=json&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" | jq -c '
+curl "https://api.unibit.ai/historicalstockprice/AAPL?range=1y&interval=1&datatype=json&AccessKey=u_tTOiuyl8EnUeeZW77Blw_6YHE1pcKs" | jq -c '
 {
 	ticker: .["Meta Data"].ticker,
 	stock: .["Stock price"][]
@@ -31,7 +31,7 @@ curl "https://api.unibit.ai/historicalstockprice/AAPL?range=1y&interval=1&dataty
 }
 ' >> unibitdata/historicalstockprice/json/historicalstockprices_1y.json
 
-curl "https://api.unibit.ai/historicalstockprice/AMZN?range=1y&interval=1&datatype=json&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" | jq -c '
+curl "https://api.unibit.ai/historicalstockprice/AMZN?range=1y&interval=1&datatype=json&AccessKey=u_tTOiuyl8EnUeeZW77Blw_6YHE1pcKs" | jq -c '
 {
 	ticker: .["Meta Data"].ticker,
 	stock: .["Stock price"][]
@@ -50,7 +50,7 @@ curl "https://api.unibit.ai/historicalstockprice/AMZN?range=1y&interval=1&dataty
 
 ## ###########################################################
 ## JSON: get companyprofiles from API - transform with jq
-curl "https://api.unibit.ai/companyprofile/AAPL?datatype=json&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" | jq -c '. | 
+curl "https://api.unibit.ai/companyprofile/AAPL?datatype=json&AccessKey=u_tTOiuyl8EnUeeZW77Blw_6YHE1pcKs" | jq -c '. | 
 {
 	ticker:				."company profile".ticker,
 	company_name:		."company profile".company_name,
@@ -63,7 +63,7 @@ curl "https://api.unibit.ai/companyprofile/AAPL?datatype=json&AccessKey=FeVyD9yx
 }
 ' >> unibitdata/companyprofile/json/companyprofiles.json
 
-curl "https://api.unibit.ai/companyprofile/AMZN?datatype=json&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" | jq -c '. | 
+curl "https://api.unibit.ai/companyprofile/AMZN?datatype=json&AccessKey=u_tTOiuyl8EnUeeZW77Blw_6YHE1pcKs" | jq -c '. | 
 {
 	ticker:				."company profile".ticker,
 	company_name:		."company profile".company_name,
@@ -79,17 +79,17 @@ curl "https://api.unibit.ai/companyprofile/AMZN?datatype=json&AccessKey=FeVyD9yx
 
 ## ###########################################################
 ## CSV: get stockprices from API - transform with sed
-curl "https://api.unibit.ai/historicalstockprice/AAPL?range=1y&interval=1&datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" |
+curl "https://api.unibit.ai/historicalstockprice/AAPL?range=1y&interval=1&datatype=csv&AccessKey=u_tTOiuyl8EnUeeZW77Blw_6YHE1pcKs" |
 	sed -n '1,1p' |
 	sed 's/^/ticker,/
 '	> unibitdata/historicalstockprice/csv/historicalstockprices_1y_header.csv
 	
-curl "https://api.unibit.ai/historicalstockprice/AAPL?range=1y&interval=1&datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" |
+curl "https://api.unibit.ai/historicalstockprice/AAPL?range=1y&interval=1&datatype=csv&AccessKey=u_tTOiuyl8EnUeeZW77Blw_6YHE1pcKs" |
 	sed -n '2,$p' |
 	sed 's/^/AAPL,/
 '	> unibitdata/historicalstockprice/csv/historicalstockprices_1y.csv 
 	
-curl "https://api.unibit.ai/historicalstockprice/AMZN?range=1y&interval=1&datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" |
+curl "https://api.unibit.ai/historicalstockprice/AMZN?range=1y&interval=1&datatype=csv&AccessKey=u_tTOiuyl8EnUeeZW77Blw_6YHE1pcKs" |
 	sed -n '2,$p' |
 	sed 's/^/AMZN,/
 '	>> unibitdata/historicalstockprice/csv/historicalstockprices_1y.csv
@@ -97,14 +97,14 @@ curl "https://api.unibit.ai/historicalstockprice/AMZN?range=1y&interval=1&dataty
 
 ## ###########################################################
 ## CSV: get companyprofiles from API - transform with sed
-curl "https://api.unibit.ai/companyprofile/AAPL?datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" |
+curl "https://api.unibit.ai/companyprofile/AAPL?datatype=csv&AccessKey=u_tTOiuyl8EnUeeZW77Blw_6YHE1pcKs" |
 	sed -n '1,1p
 ' 	> unibitdata/companyprofile/csv/companyprofiles_header.csv
 	
-curl "https://api.unibit.ai/companyprofile/AAPL?datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" |
+curl "https://api.unibit.ai/companyprofile/AAPL?datatype=csv&AccessKey=u_tTOiuyl8EnUeeZW77Blw_6YHE1pcKs" |
 	sed -n '2,$p
 '	> unibitdata/companyprofile/csv/companyprofiles.csv
 	
-curl "https://api.unibit.ai/companyprofile/AMZN?datatype=csv&AccessKey=FeVyD9yxVwaP6AGZXNwGm2zMCyuR5ki0" |
+curl "https://api.unibit.ai/companyprofile/AMZN?datatype=csv&AccessKey=u_tTOiuyl8EnUeeZW77Blw_6YHE1pcKs" |
 	sed -n '2,$p
 '	>> unibitdata/companyprofile/csv/companyprofiles.csv
